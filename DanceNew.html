@@ -1,0 +1,177 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Identification Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(117, 27, 117);
+        }
+#question img{
+    margin-left: 110px;
+}
+        .quiz-container {
+            margin-left: 400px;
+            margin-top: 100px;
+            padding-left: 50px;
+            width: 600px;
+            height:fit-content;
+            border-color: black;
+            border-width: 6px;
+            border-style: solid;
+            background-color: rgb(238, 82, 165);
+            border-radius: 30px;
+        }
+
+        h1 {
+            color: black;
+            margin-left: 130px;
+            margin-bottom: 20px;
+        }
+
+        #options button {
+            margin: 10px;
+            padding: 15px 30px;
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            border-radius: 10px;
+        }
+
+        #options button:hover {
+            background-color: rgb(128, 25, 130);
+            color: rgb(251, 249, 128);
+        }
+
+        #next-btn {
+            margin-top: 20px;
+            text-align: center;
+            height: 50px;
+            width: 120px;
+            font-size: 17px;
+            margin-left: 940px;
+        }
+
+        #op-container {
+            padding-left: 150px;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: large;
+            margin-left: 40px;
+        }
+        #result img{
+            position: relative;
+            right: 100px;
+        }
+        p{
+            font-size: larger;
+            font-weight: bold;
+            color:black ;
+            position: relative;
+            right:40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Dance Form</h1>
+    <div id="question"></div>
+    <div id="op-container">
+        <div id="options"></div>
+        <div id="result"></div>
+    </div>
+</div>
+<button id="next-btn" style="display: none;">Next</button>
+
+<script>
+    const quizData = [
+    {
+        image: "https://tse3.mm.bing.net/th?id=OIP.aNkc_lgFFoOfS3BSiRfsmwHaE8&pid=Api&P=0&h=180",
+        options: ["Kathak", "Bharatanatyam", "Odissi", "Kuchipudi"],
+        answer: "Bharatanatyam"
+    },
+    {
+        image: "https://tse4.mm.bing.net/th?id=OIP.BkTDyIvF9DABciGlhB2bQQHaE7&pid=Api&P=0&h=180",
+        options: ["Bharatanatyam", "Kathak", "Odissi", "Kuchipudi"],
+        answer: "Kathak"
+    },
+    {
+        image: "https://tse4.mm.bing.net/th?id=OIP.2SUDJ_5Lib4P42-o9B5QxQHaFU&pid=Api&P=0&h=180",
+        options: ["Kathak", "Bharatanatyam", "Yakshagana", "Kuchipudi"],
+        answer: "Yakshagana"
+    },
+    {
+        image: "https://tse1.mm.bing.net/th?id=OIP.Tnpo3XBHAuKgK3MRFFKy0AHaEJ&pid=Api&P=0&h=180",
+        options: ["Kathak", "Bharatanatyam", "Manipuri", "Kuchipudi"],
+        answer: "Kuchipudi"
+    }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const nextButton = document.getElementById('next-btn');
+    const resultElement = document.getElementById('result');
+
+    function loadQuestion() {
+        const currentQuizData = quizData[currentQuestion];
+        questionElement.innerHTML = `<img src="${currentQuizData.image}" alt="Sport Image" style="max-width: 300px; max-height: 200px;">`;
+
+        optionsElement.innerHTML = '';
+        currentQuizData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.innerText = option;
+            button.classList.add('option-btn');
+            button.addEventListener('click', () => checkAnswer(option));
+            optionsElement.appendChild(button);
+        });
+    }
+
+    function checkAnswer(answer) {
+        const currentQuizData = quizData[currentQuestion];
+        if (answer === currentQuizData.answer) {
+            score++;
+        }
+
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        questionElement.innerHTML = '';
+        optionsElement.innerHTML = '';
+        nextButton.style.display = 'none';
+
+        // Create image element
+        const happyImage = document.createElement('img');
+        happyImage.src = 'https://tse3.mm.bing.net/th?id=OIP.7f53HUb0fEI21aRBSwlHuAHaFM&pid=Api&P=0&h=180'; // Replace 'path/to/happy-image.jpg' with the actual path to your happy image
+        happyImage.alt = 'Happy Image';
+
+        // Append image element to resultElement
+        resultElement.appendChild(happyImage);
+
+        // Display the user's final score
+        resultElement.innerHTML += `<p>You scored ${score} out of ${quizData.length}.</p>`;
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
+
+

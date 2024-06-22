@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Identification Quiz</title>
+    <title>Dance Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +46,7 @@
 
         #options button:hover {
             background-color: rgb(128, 25, 130);
-    color: rgb(251, 249, 128);
+            color: rgb(251, 249, 128);
         }
 
         #next-btn {
@@ -61,7 +61,6 @@
         #op-container {
             padding-left: 150px;
         }
-
         #result {
             margin-top: 10px;
             font-size: large;
@@ -78,6 +77,71 @@
             position: relative;
             right:40px;
         }
+        @media screen and (max-width:500px){
+   
+   .quiz-container {
+   margin-left: 30px;
+   margin-top: 40px;
+   padding-left: 5px;
+   padding-right:5px;
+
+  
+  width:300px;
+  height:500px;
+ 
+  border-width:3px ;
+  border-style:solid ;
+ 
+  border-radius: 30px;
+}
+h1 {
+           
+            margin-left: 60px;
+            margin-bottom: 20px;
+        }
+#options button:onClick{
+    background-color: rgb(128, 25, 130);
+    color: rgb(251, 249, 128);
+}
+
+#result{
+   position: relative;
+   right:40px;
+}
+
+#op-container{
+position: relative;
+right:95px;
+}
+#question img{
+    margin-left: 60px;
+    width:240px;
+    position: relative;
+    right:30px;
+
+}
+#result img{
+            position: relative;
+            right: 50px;
+            width:260px;
+        }
+        p{
+            display:block;
+            font-size:25px;
+            font-weight: bold;
+            width:max-content;
+           
+            position: relative;
+            top:20px;
+         
+            right:45px;
+          
+            
+            
+        }
+    
+}
+        
     </style>
 </head>
 <body>
@@ -90,10 +154,9 @@
         <div id="result"></div>
     </div>
 </div>
-<button id="next-btn" style="display: none;">Next</button>
-
+<button id="next-btn">Next</button>
 <script>
-   const quizData = [
+    const quizData = [
     {
         image: "https://tse3.mm.bing.net/th?id=OIP.aNkc_lgFFoOfS3BSiRfsmwHaE8&pid=Api&P=0&h=180",
         options: ["Kathak", "Bharatanatyam", "Odissi", "Kuchipudi"],
@@ -115,6 +178,7 @@
         answer: "Kuchipudi"
     }
     ];
+
     let currentQuestion = 0;
     let score = 0;
 

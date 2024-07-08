@@ -33,10 +33,6 @@
             margin-left: 130px;
             margin-bottom: 20px;
         }
-        #next-btn{
-    visibility: hidden;
-}
-
 
         #options button {
             margin: 10px;
@@ -53,7 +49,15 @@
             color: rgb(251, 249, 128);
         }
 
-      
+        #next-btn {
+            margin-top: 20px;
+            text-align: center;
+            height: 50px;
+            width: 120px;
+            font-size: 17px;
+            margin-left: 940px;
+        }
+
         #op-container {
             padding-left: 150px;
         }
@@ -135,6 +139,11 @@ right:95px;
             
             
         }
+        #question image{
+            border: 5px;
+            border-color: brown;
+            border-style: solid;
+        }
     
 }
         
@@ -172,7 +181,37 @@ right:95px;
         image: "https://tse1.mm.bing.net/th?id=OIP.Tnpo3XBHAuKgK3MRFFKy0AHaEJ&pid=Api&P=0&h=180",
         options: ["Kathak", "Bharatanatyam", "Manipuri", "Kuchipudi"],
         answer: "Kuchipudi"
-    }
+    },
+    {
+        image: "https://thumbs.dreamstime.com/z/sikh-artists-performing-bhangra-dance-stage-bikaner-rajasthan-india-january-group-male-female-bhangra-artists-202562326.jpg",
+        options: ["Kathak", "Bhangra", "Odissi", "Kuchipudi"],
+        answer: "Bhangra"
+    },
+    {
+        image: "https://i.pinimg.com/originals/47/91/36/4791369589f7e10275300bcfd62ce490.jpg",
+        options: ["Garba", "Kathak", "Odissi", "Bhangra"],
+        answer: "Garba"
+    },
+    {
+        image: "https://www.auchitya.com/wp-content/uploads/2021/04/lavani-dance.jpg",
+        options: ["Kathak", "Bharatanatyam", "Garba", "Lavani"],
+        answer: "Lavani"
+    },
+    {
+        image: "https://cultureandheritage.org/wp-content/uploads/2021/05/a-11-1980x1316.jpg",
+        options: ["Kathak","Manipuri", "Dollu Kunitha","Padhayani"],
+        answer: "Dollu Kunitha"
+    },
+    {
+        image: "https://www.epiconictravel.com/wp-content/uploads/2019/10/Youths-Assam-performs-Bihu-dance-epiconic-travel-india.jpg",
+        options: ["Kathak", "Dollu Kunitha", "Bihu","Garba"],
+        answer: "Yakshagana"
+    },
+    {
+        image: "https://www.keralatourism.org/images/picture/large/Padayani_vibrant_folk_artform_from_Kerala_2637.jpg",
+        options: ["Kathak", "Padayani", "Manipuri", "Yakshagana"],
+        answer: "Padayani"
+    },
     ];
 
     let currentQuestion = 0;

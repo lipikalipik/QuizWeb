@@ -3,48 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Page</title>
     <style>
-        body{
-        background-image:url('https://wallpaperaccess.com/full/2384073.jpg');
-        background-repeat: no-repeat;
-    background-size:cover;
-        background-position:centre ;
+        body {
+            background-image: url('https://wallpaperaccess.com/full/2384073.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
         }
-        button{
-            position:relative;
-            top:550px;
-            left:500px;
-            width:400px;
-            height:50px;
-            background-color:rgb(43, 226, 43);
+        button {
+            position: relative;
+            top: 550px;
+            left: 500px;
+            width: 400px;
+            height: 50px;
+            background-color: rgb(43, 226, 43);
             border-radius: 30px;
             font-size: 20px;
-
         }
-        @media screen and (max-width:500px){
-button{
-   position: relative;
-   width:200px;
-   top:470px;
-   left:110px;
-   right:0px;
-}
-body{
-    background-color: rgb(43, 43, 110);
-    background-image:url('https://cdn5.vectorstock.com/i/1000x1000/33/14/quiz-time-announcement-poster-neon-signboard-vector-21093314.jpg') ;
-}
-h1{
-    color: white;
-}
+        @media screen and (max-width: 500px) {
+            button {
+                position: relative;
+                width: 200px;
+                top: 470px;
+                left: 110px;
+                right: 0px;
+            }
+            body {
+                background-color: rgb(43, 43, 110);
+                background-image: url('https://cdn5.vectorstock.com/i/1000x1000/33/14/quiz-time-announcement-poster-neon-signboard-vector-21093314.jpg');
+            }
+            h1 {
+                color: white;
+            }
         }
-            
-        
-            </style>
+        .welcome-text {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Quiz App</h1>
-   <a href="https://lipikalipik.github.io/QuizWeb/2ndPage" >
-    <button>Start</button></a>
+    <h1 class="welcome-text" id="welcomeText">Welcome!</h1>
+    <a href="https://lipikalipik.github.io/QuizWeb/2ndPage">
+        <button>Start</button>
+    </a>
+
+    <script>
+        // Retrieve the username from local storage
+        var username = localStorage.getItem('username');
+
+        // Display the username if it exists
+        if (username) {
+            document.getElementById('welcomeText').innerText = 'Welcome, ' + username + '!';
+        }
+    </script>
 </body>
 </html>
